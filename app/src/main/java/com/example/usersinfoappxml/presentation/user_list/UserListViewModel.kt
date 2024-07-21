@@ -4,11 +4,14 @@ import androidx.lifecycle.ViewModel
 import com.example.usersinfoappxml.common.Constants
 import com.example.usersinfoappxml.data.SharedPreferencesHelper
 import com.example.usersinfoappxml.model.UserModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 
-class UserListViewModel(
-    val sharedPreferencesHelper: SharedPreferencesHelper
+@HiltViewModel
+class UserListViewModel @Inject constructor(
+    private val sharedPreferencesHelper: SharedPreferencesHelper
 ): ViewModel() {
 
     private val _uiState: MutableStateFlow<UserListState> by lazy { MutableStateFlow(UserListState()) }
@@ -19,9 +22,21 @@ class UserListViewModel(
     }
 
     fun getUserList() {
+        val list = sharedPreferencesHelper.getUsers()
         _uiState.tryEmit(
             _uiState.value.copy(
                 userList = sharedPreferencesHelper.getUsers()
+            )
+        )
+    }
+
+    fun removeUser(id: Int) {
+        val list = sharedPreferencesHelper.getUsers()
+        list.removeAt(id)
+        sharedPreferencesHelper.saveUsers(list)
+        _uiState.tryEmit(
+            _uiState.value.copy(
+                userList = list
             )
         )
     }

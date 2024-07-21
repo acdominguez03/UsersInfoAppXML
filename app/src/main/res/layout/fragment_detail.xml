@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.detail.DetailFragment">
+
+    <TextView
+        android:id="@+id/tvIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail View"
+        android:layout_marginTop="20dp"
+        android:textSize="30.sp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail View"
+        android:textSize="20.sp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIntro"/>
+
+    <TextView
+        android:id="@+id/tvFavoriteColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail View"
+        android:textSize="20.sp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"/>
+
+    <TextView
+        android:id="@+id/tvBirthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail View"
+        android:textSize="20.sp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFavoriteColor"/>
+
+    <TextView
+        android:id="@+id/tvFavoriteNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail View"
+        android:textSize="20.sp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBirthdate"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

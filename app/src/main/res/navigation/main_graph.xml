@@ -13,10 +13,22 @@
         <action
             android:id="@+id/action_userListFragment_to_addNewUserFragment"
             app:destination="@id/addNewUserFragment" />
+        <action
+            android:id="@+id/action_userListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNewUserFragment"
         android:name="com.example.usersinfoappxml.presentation.add_new_user.AddNewUserFragment"
         android:label="fragment_add_new_user"
         tools:layout="@layout/fragment_add_new_user" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.usersinfoappxml.presentation.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

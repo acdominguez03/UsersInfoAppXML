@@ -3,9 +3,12 @@ package com.example.usersinfoappxml.presentation.add_new_user
 import androidx.lifecycle.ViewModel
 import com.example.usersinfoappxml.data.SharedPreferencesHelper
 import com.example.usersinfoappxml.model.UserModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class AddNewUserViewModel(
-    val sharedPreferencesHelper: SharedPreferencesHelper
+@HiltViewModel
+class AddNewUserViewModel @Inject constructor(
+    private val sharedPreferencesHelper: SharedPreferencesHelper
 ): ViewModel() {
 
     fun addNewUser(
@@ -29,6 +32,7 @@ class AddNewUserViewModel(
         newList.add(newUser)
         sharedPreferencesHelper.saveUsers(newList)
 
+        sharedPreferencesHelper.setUserId()
         completion()
     }
 

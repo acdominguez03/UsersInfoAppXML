@@ -26,14 +26,10 @@ class SharedPreferencesHelper(private val context: Context) {
 
     fun setUserId() {
         val id = getUserId()
-        if (id == -1) {
-            editor.putInt(Constants.USER_ID_KEY, 0).apply()
-        } else {
-            editor.putInt(Constants.USER_ID_KEY, id + 1).apply()
-        }
+        editor.putInt(Constants.USER_ID_KEY, id + 1).apply()
     }
 
     fun getUserId(): Int {
-        return sharedPreferences.getInt(Constants.USER_ID_KEY, -1)
+        return sharedPreferences.getInt(Constants.USER_ID_KEY, 0)
     }
 }
