@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.usersinfoappxml.data.SharedPreferencesHelper
 import com.example.usersinfoappxml.databinding.FragmentUserListBinding
@@ -36,10 +38,11 @@ class UserListFragment : Fragment() {
                 usersAdapter = UserListAdapter(
                     userList = state.userList,
                     onClickListener = { id ->
-                        //findNavController().navigate()
-                    },
-                    onDeleteClickListener = { position -> }
+                        //findNavController().navigate(UserListFragmentDirections.actionUserListFragmentToAddNewUserFragment())
+                    }
                 )
+
+                binding.tvMessage.isGone = state.userList.isNotEmpty()
             }
         }
 
@@ -49,6 +52,15 @@ class UserListFragment : Fragment() {
             adapter = usersAdapter
         }
 
+        binding.btnAdd.setOnClickListener {
+            findNavController().navigate(UserListFragmentDirections.actionUserListFragmentToAddNewUserFragment())
+        }
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getUserList()
     }
 }

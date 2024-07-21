@@ -8,8 +8,7 @@ import com.example.usersinfoappxml.model.UserModel
 
 class UserListAdapter(
     private var userList: List<UserModel>,
-    private val onClickListener: (Int) -> Unit,
-    private val onDeleteClickListener: (Int) -> Unit,
+    private val onClickListener: (Int) -> Unit
 ): RecyclerView.Adapter<UserListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -22,8 +21,7 @@ class UserListAdapter(
         holder.render(
             position = position,
             user = userList[position],
-            onClickListener = onClickListener,
-            onDeleteClickListener = onDeleteClickListener
+            onClickListener = onClickListener
         )
     }
 }

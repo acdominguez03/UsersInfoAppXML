@@ -5,5 +5,6 @@ data class UserModel (
     val name: String,
     val favoriteCity: String,
     val favoriteNumber: String,
-    val birthDate: String
+    val birthDate: String,
+    val favoriteColor: String
 )

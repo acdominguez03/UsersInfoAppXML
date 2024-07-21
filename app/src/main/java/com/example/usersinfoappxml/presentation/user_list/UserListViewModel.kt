@@ -15,34 +15,13 @@ class UserListViewModel(
     val uiState: StateFlow<UserListState> get() = _uiState
 
     init {
-        addUserList()
-    }
-
-    fun addUserList() {
-        val users = sharedPreferencesHelper.getUsers(key = Constants.USERSKEY)
-
-        if (users.isEmpty()) {
-            sharedPreferencesHelper.saveUsers(
-                userList = listOf(
-                    UserModel(
-                        id = 0,
-                        name = "Andres",
-                        favoriteCity = "Sidney",
-                        favoriteNumber = "12",
-                        birthDate = "10/08/2003"
-                    )
-                ),
-                key = Constants.USERSKEY
-            )
-        }
-
         getUserList()
     }
 
     fun getUserList() {
         _uiState.tryEmit(
             _uiState.value.copy(
-                userList = sharedPreferencesHelper.getUsers(key = Constants.USERSKEY)
+                userList = sharedPreferencesHelper.getUsers()
             )
         )
     }

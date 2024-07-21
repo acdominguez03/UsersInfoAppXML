@@ -10,10 +10,10 @@ class UserListViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = UserRowBinding.bind(view)
 
-    fun render(position: Int, user: UserModel, onClickListener: (Int) -> Unit, onDeleteClickListener: (Int) -> Unit) {
+    fun render(position: Int, user: UserModel, onClickListener: (Int) -> Unit) {
         binding.tvUserName.text = user.name
         binding.tvFavoriteCity.text = "Favorite city: ${user.favoriteCity}"
-        binding.ivColor.setBackgroundColor(Color.BLACK)
+        binding.tvFavoriteColor.text = "Favorite color: ${user.favoriteColor}"
 
         itemView.setOnClickListener {
             onClickListener(
