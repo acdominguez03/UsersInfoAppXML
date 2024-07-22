@@ -19,6 +19,8 @@ navigationSafeArgs = "2.7.7"
 hiltAndroid = "2.46.1"
 hiltAndroidGradlePlugin = "2.46.1"
 hiltCompiler = "2.46.1"
+maps = "2.0.1"
+googleMaps = "18.2.0"
 
 
 [libraries]
@@ -38,8 +40,12 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
 
+google-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "googleMaps" }
+
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeArgs" }
 dagger-hilt-plugin-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroidGradlePlugin" }
+map-secret = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "maps" }

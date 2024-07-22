@@ -87,6 +87,7 @@ class UserListFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val deletedUser = viewModel.uiState.value.userList[viewHolder.adapterPosition]
+                viewModel.uiState.value.userList
 
                 if (direction == ItemTouchHelper.LEFT) {
                     viewModel.removeUser(viewHolder.adapterPosition)

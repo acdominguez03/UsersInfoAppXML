@@ -24,6 +24,12 @@ class SharedPreferencesHelper(private val context: Context) {
         return gson.fromJson(json, type) ?: arrayListOf()
     }
 
+    fun deleteUser(position: Int) {
+        val users = getUsers()
+        users.removeAt(position)
+        saveUsers(users)
+    }
+
     fun setUserId() {
         val id = getUserId()
         editor.putInt(Constants.USER_ID_KEY, id + 1).apply()

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
     alias(libs.plugins.dagger.hilt.plugin.android)
+    alias(libs.plugins.map.secret)
     kotlin("kapt")
 }
 
@@ -59,6 +60,6 @@ dependencies {
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
 
-    implementation(libs.ambilwarna)
+    implementation(libs.google.maps)
 
 }
