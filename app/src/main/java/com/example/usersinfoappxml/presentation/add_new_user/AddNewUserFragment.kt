@@ -4,28 +4,21 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.transition.Visibility
-import com.example.usersinfoappxml.data.SharedPreferencesHelper
 import com.example.usersinfoappxml.databinding.FragmentAddNewUserBinding
 import com.example.usersinfoappxml.extensions.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
-import yuku.ambilwarna.AmbilWarnaDialog
-import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 @AndroidEntryPoint
 class AddNewUserFragment : Fragment() {
-
     private lateinit var binding: FragmentAddNewUserBinding
 
     private val viewModel: AddNewUserViewModel by viewModels()

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/userListFragment">
+    app:startDestination="@id/mapFragment2">
 
     <fragment
         android:id="@+id/userListFragment"
@@ -31,4 +31,9 @@
             android:name="userId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/mapFragment2"
+        android:name="com.example.usersinfoappxml.presentation.maps.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>

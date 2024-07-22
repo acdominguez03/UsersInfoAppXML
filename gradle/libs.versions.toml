@@ -21,6 +21,7 @@ hiltAndroidGradlePlugin = "2.46.1"
 hiltCompiler = "2.46.1"
 maps = "2.0.1"
 googleMaps = "18.2.0"
+location = "20.0.0"
 
 
 [libraries]
@@ -41,6 +42,7 @@ dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref =
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
 
 google-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "googleMaps" }
+google-location = { module = "com.google.android.gms:play-services-location", version.ref = "location" }
 
 
 [plugins]

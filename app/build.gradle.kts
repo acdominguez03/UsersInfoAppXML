@@ -61,5 +61,6 @@ dependencies {
     kapt(libs.dagger.hilt.compiler)
 
     implementation(libs.google.maps)
+    implementation(libs.google.location)
 
 }
